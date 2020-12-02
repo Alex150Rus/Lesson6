@@ -16,7 +16,12 @@ namespace Lesson6Point1
     public delegate double DoubleFun(double x, double y);
     class Program
     {
-
+        /// <summary>
+        /// Метод из классной работы
+        /// </summary>
+        /// <param name="F"></param>
+        /// <param name="x"></param>
+        /// <param name="b"></param>
         public static void Table(Fun F, double x, double b)
         {
             Console.WriteLine("----- X ----- Y -----");
@@ -47,16 +52,34 @@ namespace Lesson6Point1
 
         }
 
+        /// <summary>
+        /// метод из классной работы
+        /// </summary>
+        /// <param name="x"></param>
+        /// <returns></returns>
         public static double MyFunc(double x)
         {
             return x * x * x;
         }
 
+
+        /// <summary>
+        /// Метод a*x^2
+        /// </summary>
+        /// <param name="a">Первый параметр</param>
+        /// <param name="x">Второй параметр</param>
+        /// <returns>a*x^2</returns>
         public static double Ax2(double a, double x)
         {
             return a * Math.Pow(x, 2);
         }
 
+        /// <summary>
+        /// a*sin(x)
+        /// </summary>
+        /// <param name="a">Первый параметр</param>
+        /// <param name="x">Второй параметр</param>
+        /// <returns>a*sin(x)</returns>
         public static double AsinX(double a, double x)
         {
             return a * Math.Sin(x);
@@ -64,6 +87,7 @@ namespace Lesson6Point1
 
         static void Main(string[] args)
         {
+            //Классаная работа
             Console.WriteLine("Таблица функции MyFunc:");
             Table(new Fun(MyFunc), -2, 2);
             Console.WriteLine("Еще раз та же таблица, но вызов организован по новому");
@@ -74,7 +98,7 @@ namespace Lesson6Point1
             // Упрощение(с C# 2.0). Использование анонимного метода
             Table(delegate (double x) { return x * x; }, 0, 3);
 
-            //Продемонстрировать работу на функции с функцией a*x^2 и функцией a*sin(x).
+            //ДЗ: Продемонстрировать работу на функции с функцией a*x^2 и функцией a*sin(x).
             Console.WriteLine("Продемонстрируем работу на функции с функцией a * x ^ 2");
             Table(Ax2, -2, 2);
             Console.WriteLine("Продемонстрируем работу на функции с функцией a*sin(x)");
